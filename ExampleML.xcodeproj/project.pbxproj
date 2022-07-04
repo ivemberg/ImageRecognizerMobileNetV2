@@ -7,18 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C3ADCC62872DCD9008EB361 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3ADCC52872DCD9008EB361 /* UIImage+Extension.swift */; };
+		3C3ADCC82872DE8A008EB361 /* MobileNetV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3C3ADCC72872DE8A008EB361 /* MobileNetV2.mlmodel */; };
 		3CE8AC65286F4598008A24AA /* ExampleMLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE8AC64286F4598008A24AA /* ExampleMLApp.swift */; };
 		3CE8AC67286F4598008A24AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE8AC66286F4598008A24AA /* ContentView.swift */; };
 		3CE8AC69286F459C008A24AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CE8AC68286F459C008A24AA /* Assets.xcassets */; };
 		3CE8AC6C286F459C008A24AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CE8AC6B286F459C008A24AA /* Preview Assets.xcassets */; };
+		3CE8AC73286F462D008A24AA /* YOLOv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3CE8AC72286F462D008A24AA /* YOLOv3.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C3ADCC52872DCD9008EB361 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		3C3ADCC72872DE8A008EB361 /* MobileNetV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = MobileNetV2.mlmodel; path = ../../../../Downloads/MobileNetV2.mlmodel; sourceTree = "<group>"; };
 		3CE8AC61286F4598008A24AA /* ExampleML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleML.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CE8AC64286F4598008A24AA /* ExampleMLApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleMLApp.swift; sourceTree = "<group>"; };
 		3CE8AC66286F4598008A24AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3CE8AC68286F459C008A24AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3CE8AC6B286F459C008A24AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3CE8AC72286F462D008A24AA /* YOLOv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = YOLOv3.mlmodel; path = ../../../../Downloads/YOLOv3.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +57,11 @@
 		3CE8AC63286F4598008A24AA /* ExampleML */ = {
 			isa = PBXGroup;
 			children = (
+				3C3ADCC72872DE8A008EB361 /* MobileNetV2.mlmodel */,
+				3CE8AC72286F462D008A24AA /* YOLOv3.mlmodel */,
 				3CE8AC64286F4598008A24AA /* ExampleMLApp.swift */,
 				3CE8AC66286F4598008A24AA /* ContentView.swift */,
+				3C3ADCC52872DCD9008EB361 /* UIImage+Extension.swift */,
 				3CE8AC68286F459C008A24AA /* Assets.xcassets */,
 				3CE8AC6A286F459C008A24AA /* Preview Content */,
 			);
@@ -137,8 +146,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CE8AC73286F462D008A24AA /* YOLOv3.mlmodel in Sources */,
 				3CE8AC67286F4598008A24AA /* ContentView.swift in Sources */,
 				3CE8AC65286F4598008A24AA /* ExampleMLApp.swift in Sources */,
+				3C3ADCC82872DE8A008EB361 /* MobileNetV2.mlmodel in Sources */,
+				3C3ADCC62872DCD9008EB361 /* UIImage+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
