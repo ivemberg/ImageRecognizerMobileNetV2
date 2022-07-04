@@ -21,10 +21,11 @@ struct ContentView: View {
         VStack {
             Image(photos[currentIndex])
                 .resizable()
-                .frame(width: 500, height: 500)
+                .frame(width: 300, height: 300)
+                .clipShape(Circle())
             
             Spacer()
-        }
+        }.scaledToFit()
         
         HStack {
             Button("Back") {
@@ -36,7 +37,9 @@ struct ContentView: View {
             }
             .padding()
             .foregroundColor(Color.white)
-            .background(Color.gray)
+            .background(Color.red)
+            .clipShape(Capsule())
+
             
             Button("Next") {
                 if self.currentIndex < self.photos.count - 1 {
@@ -47,7 +50,9 @@ struct ContentView: View {
             }
             .padding()
             .foregroundColor(Color.white)
-            .background(Color.gray)
+            .background(Color.green)
+            .clipShape(Capsule())
+
             
         }
         
@@ -57,13 +62,23 @@ struct ContentView: View {
         }
         .padding()
         .foregroundColor(Color.white)
-        .background(Color.green)
+        .background(Color.blue)
+        .clipShape(Capsule())
+        .padding()
         
         // The Text View that we will use to display the results of the classification
-        Text(classificationLabel)
-            .padding()
-            .font(.body)
+        VStack{
+            //ScrollView{
+                Text(classificationLabel)
+                   .padding()
+                   .font(.body)
+            }
+        //}
+            
     }
+    
+    
+   
     
     private func classifyImage() {
         
@@ -81,9 +96,9 @@ struct ContentView: View {
                 
                 let results = output.classLabelProbs.sorted { $0.1 > $1.1 }
 
-                let result = results.map { (key, value) in
+            let result = results.prefix(10).map { (key, value) in
                     return "\(key) = \(String(format: "%.2f", value * 100))%"
-                }.joined(separator: "\\n")
+                }.joined(separator: "\n")
 
                 self.classificationLabel = result
             }
