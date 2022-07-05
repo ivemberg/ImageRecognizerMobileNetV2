@@ -11,10 +11,13 @@ import CoreML
 struct ContentView: View {
     
     let model = MobileNetV2()
-    @State private var classificationLabel: String = ""
+    @State private var classificationLabel: Text = Text("")
     
     let photos = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
     @State private var currentIndex: Int = 0
+    
+    @State var textButton: String = "Classify"
+    @State var isTapped: Bool = false
     
     var body: some View {
         
@@ -47,6 +50,7 @@ struct ContentView: View {
                 } else {
                     self.currentIndex = 0
                 }
+                classificationLabel = Text("")
             }
             .padding()
             .foregroundColor(Color.white)
@@ -57,6 +61,33 @@ struct ContentView: View {
         }
         
         //The button we will use to classify the image using our model
+        
+        Button(action: {
+            classifyImage()
+            isTapped.toggle()
+            switch isTapped {
+            case true:
+                textButton = "Closed"
+            default:
+                textButton = "Classify"
+                classificationLabel = Text("")
+            }
+        }, label: {
+            Text("\(textButton)")
+        })
+        .padding()
+        .foregroundColor(Color.white)
+        .background(Color.blue)
+        .clipShape(Capsule())
+        .padding()
+        
+        VStack{
+            classificationLabel
+                .padding()
+                .font(.custom("Avenir-Heavy", size: 14))
+        }
+        
+        /*
         Button("Classify") {
             classifyImage()
         }
@@ -71,9 +102,10 @@ struct ContentView: View {
             //ScrollView{
                 Text(classificationLabel)
                    .padding()
-                   .font(.body)
+                   .font(.custom("Avenir-Heavy", size: 14))
             }
         //}
+         */
             
     }
     
@@ -100,7 +132,7 @@ struct ContentView: View {
                     return "\(key) = \(String(format: "%.2f", value * 100))%"
                 }.joined(separator: "\n")
 
-                self.classificationLabel = result
+                self.classificationLabel = Text(result)
             }
         
     }
